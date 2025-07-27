@@ -11,6 +11,7 @@ class PurchaseDAO
 {
 
   static private $db;
+
   static function initialize($className)
   {
     self::$db = new PDOService($className);
@@ -62,10 +63,6 @@ class PurchaseDAO
     self::$db->execute();
   }
 
-  // WE NEED TO USE JOIN HERE
-  // Make sure to select from both tables joined at the correct column
-  // You may need to also query some columns from the Customer class/table. 
-  // Those columns are needed for price calculation and display the Customer detail in the main page    
   static function getPurchaseList()
   {
     $sql = "SELECT purchase.PurchaseID,purchase.Amount,customer.CustomerDetail,customer.CustomerDiscount FROM purchase JOIN customer ON purchase.CustomerCode=customer.CustomerCode;";

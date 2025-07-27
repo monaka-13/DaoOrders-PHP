@@ -9,7 +9,6 @@
 | Amount       | int(11)     | YES  |     | NULL    |       |
 +--------------+-------------+------+-----+---------+-------+
 */
-// Create Purchase Class
 
 class Purchase
 {

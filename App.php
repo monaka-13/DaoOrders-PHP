@@ -1,5 +1,4 @@
 <?php
-
 require_once("inc/config.inc.php");
 
 require_once("inc/Entity/Purchase.class.php");
@@ -14,21 +13,19 @@ require_once("inc/Utility/PurchaseDAO.class.php");
 PurchaseDAO::initialize("Purchase");
 CustomerDAO::initialize("Customer");
 
-
-//If there was post data from an edit form then process it
+// POST
 if (!empty($_POST)) {
   if ($_POST["action"] == "edit") {
-    //Assemble the Purchase to update
+    // Edit
     $purchaseToUpdate = new Purchase();
     $purchaseToUpdate->setPurchaseID($_POST["purchaseID"]);
     $purchaseToUpdate->setAmount($_POST["amount"]);
     $purchaseToUpdate->setCustomerCode($_POST["customerCode"]);
 
-    //Send the Purchase to the DAO to be update
     PurchaseDAO::updatePurchase($purchaseToUpdate);
     $_GET = [];
   } else if ($_POST["action"] == "create") {
-    //Assemble the Purchase to Insert
+    // Create
     $purchaseToCreate = new Purchase();
     $purchaseToCreate->setPurchaseID($_POST["purchaseID"]);
     $purchaseToCreate->setAmount($_POST["amount"]);
@@ -38,6 +35,7 @@ if (!empty($_POST)) {
   }
 }
 
+// Delete
 if (isset($_GET["action"]) && $_GET["action"] == "delete") {
   PurchaseDAO::deletePurchase($_GET["id"]);
 }
@@ -46,10 +44,11 @@ if (isset($_GET["action"]) && $_GET["action"] == "delete") {
 Page::header();
 Page::listPurchases(PurchaseDAO::getPurchaseList());
 if (isset($_GET["action"]) && $_GET["action"] == "edit") {
+  // Edit (display form)
   $editPurchase = PurchaseDAO::getPurchase($_GET["id"]);
   Page::editPurchaseForm($editPurchase, CustomerDAO::getCustomer());
-  // print_r(CustomerDAO::getCustomer());
 } else {
+  // Create (display form)
   Page::createPurchaseForm(CustomerDAO::getCustomer());
 }
 Page::footer();

@@ -1,30 +1,28 @@
 <?php
-
-# 4. Complete the listPurchases(), addPurchaseForm() and editPurchaseForm()
-
 class Page
 {
 
   static function header()
-  { ?>
-    <!-- Start the page 'header' -->
+  {
+?>
     <!DOCTYPE html>
     <html>
 
     <head>
       <title></title>
       <meta charset="utf-8">
-      <meta name="author" content="WHOAMI">
-      <title>There should be a title here</title>
+      <meta name="KayShigenaga" content="DAOOrders-PHP">
+      <title>DAOOrders-PHP</title>
       <link href="css/styles.css" rel="stylesheet">
     </head>
 
     <body>
       <header>
-        <h1>There should be heading here</h1>
+        <h1>DAOOrders-PHP</h1>
       </header>
       <article>
-      <?php }
+      <?php
+    }
 
     static function footer()
     { ?>
@@ -32,7 +30,6 @@ class Page
     </body>
 
     </html>
-
   <?php }
 
     static function listPurchases(array $purchases)
@@ -47,12 +44,10 @@ class Page
             <th>Amount</th>
             <th>Customer Detail</th>
             <th>Price</th>
-            <!-- Complete the remaining header -->
             <th>Edit</th>
             <th>Delete</th>
         </thead>
         <?php
-        //List all the purchase records
         $i = 1;
         foreach ($purchases as $purchase) {
           if ($i % 2 == 0) {
@@ -72,9 +67,6 @@ class Page
         echo '</table></section>';
       }
 
-      // this function displays the add new purchase record
-      // $customers is the array of Customer objects obtained from the CustomerDAO
-      // $customers is required to display the CustomerCode and CustomerDetail in select options
       static function createPurchaseForm(array $customers)
       { ?>
         <section class="form1">
@@ -109,16 +101,9 @@ class Page
 
       <?php }
 
-      // This function is to show the edit purchase record form
-      // The edit form should be displayed only when the Edit link is clicked
-      // Whether you will display add form or edit form should be controlled in the main file.
-
-      // The $purchaseToEdit is a singleResult record of purchase whose link was clicked
-      // The $customers contains the array of customer objects from the CustomerDAO
       static function editPurchaseForm(Purchase $purchaseToEdit, array $customers)
       {
       ?>
-        <!-- Start the page's edit entry form -->
         <section class="form1">
           <h3>Edit Purchase -
             <?= $purchaseToEdit->getPurchaseID() ?>
@@ -158,7 +143,6 @@ class Page
             <input type="submit" value="Edit Purchase">
           </form>
         </section>
-
     <?php
       }
     }

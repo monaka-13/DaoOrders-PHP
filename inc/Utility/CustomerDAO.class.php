@@ -13,7 +13,6 @@ class CustomerDAO
     //Initialize the CustomerDAO
     static function initialize($className)
     {
-        //Remember to send in the class name for this DAO
         self::$db = new PDOService($className);
     }
 
