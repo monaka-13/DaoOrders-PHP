@@ -1,0 +1,41 @@
+[27-Jul-2025 11:38:27 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:31
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(17): PDOService->__construct('Purchase')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(14): PurchaseDAO::initialize('Purchase')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 31
+[27-Jul-2025 11:41:53 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:34
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(17): PDOService->__construct('Purchase')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(14): PurchaseDAO::initialize('Purchase')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 34
+[27-Jul-2025 11:41:57 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:34
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(17): PDOService->__construct('Purchase')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(14): PurchaseDAO::initialize('Purchase')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 34
+[27-Jul-2025 11:44:46 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:34
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(17): PDOService->__construct('Purchase')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(14): PurchaseDAO::initialize('Purchase')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 34
+[27-Jul-2025 11:44:48 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:34
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(17): PDOService->__construct('Purchase')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(14): PurchaseDAO::initialize('Purchase')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 34
+[27-Jul-2025 11:45:15 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property PDOService::$_host in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:34
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\CustomerDAO.class.php(17): PDOService->__construct('Customer')
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(15): CustomerDAO::initialize('Customer')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 34
+[27-Jul-2025 11:46:36 America/Vancouver] PHP Fatal error:  Uncaught Error: Access to undeclared static property CustomerDAO::$db in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\CustomerDAO.class.php:17
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(15): CustomerDAO::initialize('Customer')
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\CustomerDAO.class.php on line 17
