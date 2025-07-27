@@ -17,7 +17,7 @@ CustomerDAO::initialize("Customer");
 
 //If there was post data from an edit form then process it
 if (!empty($_POST)) {
-    // if ($_POST["action"] == "edit") {
+  if ($_POST["action"] == "edit") {
     //     //Assemble the Purchase to update
     //     $PurchaseToUpdate = new Purchase();
     //     $PurchaseToUpdate->setPurchaseID($_POST["purchaseID"]);
@@ -26,34 +26,29 @@ if (!empty($_POST)) {
 
     //     //Send the Purchase to the DAO to be update
     //     PurchaseDAO::updatePurchase($PurchaseToUpdate);
+  } else if ($_POST["action"] == "create") {
+        //Assemble the Purchase to Insert
+        $purchaseToCreate = new Purchase();
+        $purchaseToCreate->setPurchaseID($_POST["purchaseID"]);
+        $purchaseToCreate->setAmount($_POST["amount"]);
+        $purchaseToCreate->setCustomerCode($_POST["customerCode"]);
 
-    // } else if ($_POST["action"] == "create")    {
-    //     //Assemble the Purchase to Insert
-    //     $PurchaseToCreate = new Purchase();
-
-    //     //Send the Purchase to the DAO for insertion
-    //     $PurchaseToCreate->setPurchaseID($_POST["purchaseID"]);
-    //     $PurchaseToCreate->setAmount($_POST["amount"]);
-    //     $PurchaseToCreate->setCustomerCode($_POST["customerCode"]);
-
-    //     PurchaseDAO::createPurchase($PurchaseToCreate);
-
-    // }
+        PurchaseDAO::createPurchase($purchaseToCreate);
+  }
 }
 
 //If there was a delete that came in via GET
-if (isset($_GET["action"]) && $_GET["action"] == "delete")  {
-    // PurchaseDAO::deletePurchase($_GET["id"]);
+if (isset($_GET["action"]) && $_GET["action"] == "delete") {
+  // PurchaseDAO::deletePurchase($_GET["id"]);
 }
 
 
 Page::header();
 Page::listPurchases(PurchaseDAO::getPurchaseList());
-if (isset($_GET["action"]) && $_GET["action"] == "edit")  {
-    // $PurchaseToEdit = PurchaseDAO::getPurchase($_GET["id"]);
-    $PurchaseToEdit = new Purchase();
-    Page::editPurchaseForm($PurchaseToEdit, CustomerDAO::getCustomer());
+if (isset($_GET["action"]) && $_GET["action"] == "edit") {
+  // $PurchaseToEdit = PurchaseDAO::getPurchase($_GET["id"]);
+  // Page::editPurchaseForm($PurchaseToEdit, CustomerDAO::getCustomer());
 } else {
-    Page::createPurchaseForm(CustomerDAO::getCustomer());
+  Page::createPurchaseForm(CustomerDAO::getCustomer());
 }
 Page::footer();

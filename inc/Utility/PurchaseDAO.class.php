@@ -16,8 +16,15 @@ class PurchaseDAO
     self::$db = new PDOService($className);
   }
 
-  static function createPurchase(Purchase $newPurchase)
+  static function createPurchase(Purchase $purchase)
   {
+    $sql = "INSERT INTO purchase(PurchaseID,CustomerCode,Amount) VALUE(:purchaseID,:customerCode,:amount);";
+    self::$db->query($sql);
+    self::$db->bind(":purchaseID",$purchase->getPurchaseID());
+    self::$db->bind(":customerCode",$purchase->getCustomerCode());
+    self::$db->bind(":amount",$purchase->getAmount());
+    self::$db->execute();
+    return self::$db->lastInsertedId();
   }
 
   static function getPurchase(string $purchaseId)

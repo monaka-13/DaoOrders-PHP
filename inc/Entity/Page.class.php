@@ -94,14 +94,14 @@ class Page
                 <td>
                   <select name="customerCode">
                     <?php
-                    // use loop to list all CustomerDetail here
-                    // from the database to display the html's option elements
+                    foreach ($customers as $customer) {
+                      echo "<option>" . $customer->getCustomerDetail() . "</option>";
+                    }
                     ?>
                   </select>
                 </td>
               </tr>
             </table>
-            <!-- Use input type hidden to let us know that this action is to create record -->
             <input type="hidden" name="action" value="create">
             <input type="submit" value="Add Purchase Record">
           </form>
