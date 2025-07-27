@@ -44,11 +44,18 @@ class PurchaseDAO
     return self::$db->resultSet();
   }
 
-  static function updatePurchase(Purchase $PurchaseToUpdate) {}
+  static function updatePurchase(Purchase $purchase) {
+    $sql = "UPDATE purchase SET CustomerCode=:customerCode,Amount=:amount WHERE PurchaseID=:purchaseId;";
+    self::$db->query($sql);
+    self::$db->bind(":customerCode", $purchase->getCustomerCode());
+    self::$db->bind(":amount", $purchase->getAmount());
+    self::$db->bind(":purchaseId", $purchase->getPurchaseID());
+    self::$db->execute();
+    return self::$db->singleResult();
+  }
 
   static function deletePurchase(string $purchaseId)
   {
-
     $sql = "DELETE FROM purchase WHERE PurchaseID=:purchaseId;";
     self::$db->query($sql);
     self::$db->bind(":purchaseId", $purchaseId);

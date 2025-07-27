@@ -52,3 +52,28 @@ Stack trace:
 #2 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(42): PurchaseDAO::deletePurchase('P111S')
 #3 {main}
   thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 90
+[27-Jul-2025 15:36:45 America/Vancouver] PHP Fatal error:  Uncaught Error: Object of class Purchase could not be converted to string in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php:126
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(49): Page::editPurchaseForm(Object(Purchase), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php on line 126
+[27-Jul-2025 15:39:18 America/Vancouver] PHP Fatal error:  Uncaught Error: Object of class Purchase could not be converted to string in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php:124
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(49): Page::editPurchaseForm(Object(Purchase), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php on line 124
+[27-Jul-2025 15:39:52 America/Vancouver] PHP Fatal error:  Uncaught Error: Object of class Purchase could not be converted to string in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php:124
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(49): Page::editPurchaseForm(Object(Purchase), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php on line 124
+[27-Jul-2025 15:40:05 America/Vancouver] PHP Fatal error:  Uncaught Error: Object of class Purchase could not be converted to string in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php:124
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(49): Page::editPurchaseForm(Object(Purchase), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php on line 124
+[27-Jul-2025 15:41:21 America/Vancouver] PHP Fatal error:  Uncaught TypeError: Page::editPurchaseForm(): Argument #1 ($purchaseToEdit) must be of type Purchase, bool given, called in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php on line 49 and defined in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php:118
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(49): Page::editPurchaseForm(false, Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Entity\Page.class.php on line 118

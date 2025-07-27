@@ -117,25 +117,22 @@ class Page
       // The $customers contains the array of customer objects from the CustomerDAO
       static function editPurchaseForm(Purchase $purchaseToEdit, array $customers)
       {
-        // Make sure the form's method is pointing to $_SERVER["PHP_SELF"]
-        // and it is using post method
       ?>
         <!-- Start the page's edit entry form -->
         <section class="form1">
-          <h3>Edit Purchase - <?php // I should echo something here 
-                              ?></h3>
-          <form action="<?php // which server should I send the post? 
-                        ?>" method="post">
+          <h3>Edit Purchase -
+            <?= $purchaseToEdit->getPurchaseID() ?>
+          </h3>
+          <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <table>
               <tr>
                 <td>Purchase ID</td>
-                <td><?php // What is the purchase ID of the record being edited? 
-                    ?></td>
+                <td><?= $purchaseToEdit->getPurchaseID() ?></td>
               </tr>
               <tr>
                 <td>Amount</td>
                 <td>
-                  <input type="text" name="amount" id="amount" placeholder="1 to 5" value="<?php echo $purchaseToEdit->getAmount() ?>">
+                  <input type="text" name="amount" id="amount" placeholder="1 to 5" value="<?= $purchaseToEdit->getAmount() ?>">
                 </td>
               </tr>
               <tr>
@@ -143,23 +140,25 @@ class Page
                 <td>
                   <select name="customerCode">
                     <?php
-                    // use loop to list all customer detail 
-                    // from the database to build the html's option element
-                    // make sure the corresponding customer detail for this purchase is selected
+                    foreach ($customers as $customer) {
+                      if (strcasecmp($purchaseToEdit->getCustomerCode(), $customer->getCustomerCode()) == 0) {
+                        echo "<option selected>";
+                      } else {
+                        echo "<option>";
+                      }
+                      echo $customer->getCustomerDetail() . "</option>";
+                    }
                     ?>
                   </select>
                 </td>
               </tr>
             </table>
-
-            <!-- We need another hidden input for purchase id here. Why? -->
-            <input type="hidden" name="purchaseID" value="<?php   // what is the record's purchase ID again? 
-                                                          ?>">
-            <!-- Use input type hidden to let us know that this action is to edit -->
+            <input type="hidden" name="purchaseID" value="<?= $purchaseToEdit->getPurchaseID() ?>">
             <input type="hidden" name="action" value="edit">
             <input type="submit" value="Edit Purchase">
           </form>
         </section>
 
-    <?php }
+    <?php
+      }
     }
