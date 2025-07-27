@@ -51,9 +51,9 @@ class PurchaseDAO
   // Those columns are needed for price calculation and display the Customer detail in the main page    
   static function getPurchaseList()
   {
-    //Prepare the Query
-    //execute the query
-    //Return row results
-    return [];
+    $sql = "SELECT purchase.PurchaseID,purchase.Amount,customer.CustomerDetail,customer.CustomerDiscount FROM purchase JOIN customer ON purchase.CustomerCode=customer.CustomerCode;";
+    self::$db->query($sql);
+    self::$db->execute();
+    return self::$db->resultSet();
   }
 }

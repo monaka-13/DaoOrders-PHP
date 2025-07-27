@@ -14,8 +14,6 @@ require_once("inc/Utility/PurchaseDAO.class.php");
 PurchaseDAO::initialize("Purchase");
 CustomerDAO::initialize("Customer");
 
-print_r(PurchaseDAO::getPurchases());
-
 
 //If there was post data from an edit form then process it
 if (!empty($_POST)) {
@@ -50,8 +48,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "delete")  {
 
 
 Page::header();
-Page::listPurchases([]);
-// Page::listPurchases(PurchaseDAO::getPurchaseList());
+Page::listPurchases(PurchaseDAO::getPurchaseList());
 if (isset($_GET["action"]) && $_GET["action"] == "edit")  {
     // $PurchaseToEdit = PurchaseDAO::getPurchase($_GET["id"]);
     $PurchaseToEdit = new Purchase();

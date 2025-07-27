@@ -28,7 +28,6 @@ class Page
 
     static function footer()
     { ?>
-        <!-- Start the page's footer -->
       </article>
     </body>
 
@@ -36,8 +35,6 @@ class Page
 
   <?php }
 
-    // This function lists all purchase records
-    // The $purchases is the array of Purchase object obtained from the PurchaseDAO from the controller
     static function listPurchases(array $purchases)
     {
   ?>
@@ -47,44 +44,32 @@ class Page
         <thead>
           <tr>
             <th>Purchase ID</th>
+            <th>Amount</th>
+            <th>Customer Detail</th>
+            <th>Price</th>
             <!-- Complete the remaining header -->
             <th>Edit</th>
             <th>Delete</th>
         </thead>
         <?php
         //List all the purchase records
-        $i = 0;
+        $i = 1;
         foreach ($purchases as $purchase) {
-          echo "<tr class=";
           if ($i % 2 == 0) {
-            echo '<tr class="evenrow">';
+            echo '<tr class="evenRow">';
           } else {
-            echo '<tr class="oddrow">';
+            echo '<tr>';
           }
-          echo "<td>";
-          // make sure to use the correct tr class
-          // echo "<tr class=
-
-          // ... Write your code ...
-
-          // CustomerDetail is not a member of Purchase object. However, if you 
-          // perform the join correctly when you implement getPurchaseList, you 
-          // should be able to access it here if you do it correctly
-
-          // Make sure to calculate the price. Remember that ITEM_PRICE is a constant 
-          // and CustomerDiscount is not part of the Purchase object.
-          // Make sure to perform join correctly when you implement getPurchaseList.
-          // You should be able to access it here if you do it correctly.
-          // use the debugger to check
-
-          // example of how you make the delete link!
+          echo "<td>" . $purchase->getPurchaseID() . "</td>";
+          echo "<td>" . $purchase->getAmount() . "</td>";
+          echo "<td>" . $purchase->CustomerDetail . "</td>";
+          echo "<td>$" . ITEM_PRICE * $purchase->getAmount() * (1 - $purchase->CustomerDiscount) . "</td>";
+          echo '<td><a href="?action=edit&id=' . $purchase->getPurchaseID() . '">Edit</td>';
           echo '<td><a href="?action=delete&id=' . $purchase->getPurchaseID() . '">Delete</td>';
           echo "</tr>";
           $i++;
         }
-
-        echo '</table>
-            </section>';
+        echo '</table></section>';
       }
 
       // this function displays the add new purchase record
@@ -92,11 +77,9 @@ class Page
       // $customers is required to display the CustomerCode and CustomerDetail in select options
       static function createPurchaseForm(array $customers)
       { ?>
-        <!-- Start the page's add entry form -->
         <section class="form1">
           <h3>Add a New Purchase</h3>
-          <!-- make sure to edit the form action -->
-          <form action="" method="post">
+          <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <table>
               <tr>
                 <td>Purchase ID</td>
