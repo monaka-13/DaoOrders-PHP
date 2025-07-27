@@ -39,3 +39,16 @@ Stack trace:
 #0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(15): CustomerDAO::initialize('Customer')
 #1 {main}
   thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\CustomerDAO.class.php on line 17
+[27-Jul-2025 15:29:29 America/Vancouver] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on null in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:114
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(51): PDOService->rowCount()
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(42): PurchaseDAO::deletePurchase('P111S')
+#2 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 114
+[27-Jul-2025 15:31:13 America/Vancouver] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '* FROM purchase WHERE PurchaseID='P111S'' at line 1 in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php:90
+Stack trace:
+#0 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php(90): PDOStatement->execute()
+#1 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PurchaseDAO.class.php(55): PDOService->execute()
+#2 C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\App.php(42): PurchaseDAO::deletePurchase('P111S')
+#3 {main}
+  thrown in C:\xampp\htdocs\demo\20250725_PHP_Recap_Assignment3\DaoOrders-PHP\inc\Utility\PDOService.class.php on line 90

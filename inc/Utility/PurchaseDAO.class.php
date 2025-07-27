@@ -20,9 +20,9 @@ class PurchaseDAO
   {
     $sql = "INSERT INTO purchase(PurchaseID,CustomerCode,Amount) VALUE(:purchaseID,:customerCode,:amount);";
     self::$db->query($sql);
-    self::$db->bind(":purchaseID",$purchase->getPurchaseID());
-    self::$db->bind(":customerCode",$purchase->getCustomerCode());
-    self::$db->bind(":amount",$purchase->getAmount());
+    self::$db->bind(":purchaseID", $purchase->getPurchaseID());
+    self::$db->bind(":customerCode", $purchase->getCustomerCode());
+    self::$db->bind(":amount", $purchase->getAmount());
     self::$db->execute();
     return self::$db->lastInsertedId();
   }
@@ -31,7 +31,7 @@ class PurchaseDAO
   {
     $sql = "SELECT * FROM purchase WHERE PurchaseID=:purchaseId;";
     self::$db->query($sql);
-    self::$db->bind(":purchaseId",$purchaseId);
+    self::$db->bind(":purchaseId", $purchaseId);
     self::$db->execute();
     return self::$db->singleResult();
   }
@@ -44,12 +44,15 @@ class PurchaseDAO
     return self::$db->resultSet();
   }
 
-  static function updatePurchase(Purchase $PurchaseToUpdate)
-  {
-  }
+  static function updatePurchase(Purchase $PurchaseToUpdate) {}
 
-  static function deletePurchase(string $PurchaseId)
+  static function deletePurchase(string $purchaseId)
   {
+
+    $sql = "DELETE FROM purchase WHERE PurchaseID=:purchaseId;";
+    self::$db->query($sql);
+    self::$db->bind(":purchaseId", $purchaseId);
+    self::$db->execute();
   }
 
   // WE NEED TO USE JOIN HERE

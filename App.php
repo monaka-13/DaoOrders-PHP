@@ -37,9 +37,8 @@ if (!empty($_POST)) {
   }
 }
 
-//If there was a delete that came in via GET
 if (isset($_GET["action"]) && $_GET["action"] == "delete") {
-  // PurchaseDAO::deletePurchase($_GET["id"]);
+  PurchaseDAO::deletePurchase($_GET["id"]);
 }
 
 
